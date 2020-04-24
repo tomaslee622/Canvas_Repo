@@ -1,18 +1,37 @@
+body, html{
+     overflow:hidden;
+    
+}
 .canvas{
-    border:1px black dotted;
+    border:1px black solid;
     position:absolute;
     top:0px;
     bottom:0px;
     left:0px;
-    right:0px
+    right:0px;
+   
 }
 
 #canvas-draft{
     background-color: transparent;
 }
-body{
-    overflow:hidden;
-}
 #canvas-container{
+    margin: 20px;
+    padding: 10px;
     height:480px;
+    
 }  
+.canvas{
+    margin: 20px 150px 20px 150px ;
+}
+.buttons{ 
+    margin: 50px 100px 0px 100px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    
+}
+.btn{
+    margin: 10px;
+    
+}
