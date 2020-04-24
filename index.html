@@ -55,16 +55,16 @@
     <script src="./assets/js/color-picker.js"></script>
     <script type='text/javascript'>
         $('#drawing-rectangle').click(() => {
-            currentFunction = new DrawingRectangle(contextReal, contextDraft);
+            currentFunction = new DrawingRectangle(contextReal, contextDraft, contextFill);
         });
         $('#drawing-line').click(() => {
-            currentFunction = new DrawingLine(contextReal, contextDraft);
+            currentFunction = new DrawingLine(contextReal, contextFill);
         });
         $('#drawing-circle').click(() => {
-            currentFunction = new DrawingCircle(contextReal, contextDraft);
+            currentFunction = new DrawingCircle(contextReal, contextDraft, contextFill);
         });
 
-        currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        currentFunction = new DrawingRectangle(contextReal, contextDraft, contextFill);
 
     </script>
 </body>

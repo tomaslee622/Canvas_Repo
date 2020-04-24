@@ -75,6 +75,8 @@ pickr.on('change', (color, instance) =>{
     const hexColors = color.toHEXA().toString();
     contextFill= hexColors;
     console.log(contextFill)
+    currentFunction.fillColor = hexColors;
+    currentFunction.color = hexColors;
 })
 
 

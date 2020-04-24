@@ -4,19 +4,22 @@ let prevMouseY = 0
 let connectLine = false
 
 class DrawingLine extends PaintFunction{
-    constructor(contextReal){
+    constructor(contextReal,color = '#0F0',width = 5){
         super();
-        this.context = contextReal;            
+        this.context = contextReal;
+        this.width = width;
+        this.color = color;
     }
     
     onMouseDown(coord,event){
-        this.context.strokeStyle = contextFill;
+        //this.context.strokeStyle = "#df4b26";
+        this.context.strokeStyle = this.color;
         this.context.lineJoin = "round";
-        this.context.lineWidth = 5;
+        this.context.lineWidth = this.width;
+        this.context.putTag();
         this.context.beginPath();
         this.context.moveTo(coord[0],coord[1]);
         this.draw(coord[0],coord[1]);
-        this.context.putTag()
         drawing = true
     }
     onDragging(coord,event){
@@ -24,7 +27,7 @@ class DrawingLine extends PaintFunction{
     }
 
     onMouseMove(){}
-    onMouseUp(){
+    onMouseUp(coord){
         if(drawing){
             this.context.putTag()
           }
