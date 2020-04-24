@@ -1,7 +1,11 @@
 
+$('#btns').append(`<button class="btn btn-primary fas fa-palette color-picker">Color</button>`);
+
 const pickr = Pickr.create({
     el: '.color-picker',
     theme: 'classic', // or 'monolith', or 'nano'
+    useAsButton: true,
+    sliders: 'v',
 
     swatches: [
         'rgba(244, 67, 54, 1)',
