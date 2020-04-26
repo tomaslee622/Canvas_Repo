@@ -1,6 +1,23 @@
 body, html{
      overflow:hidden;
+    height: 100%;
+}
+.bubble {
     
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+    touch-action: none;
+    z-index: -999;
+    width: calc(100%-2px);
+    height: calc(100%-2px); 
+  }
+.div{ 
+    background-color: black;
+    height: 500px;
+    width: 100px;
 }
 .canvas{
     border:1px black solid;
@@ -8,8 +25,8 @@ body, html{
     top:0px;
     bottom:0px;
     left:0px;
-    right:0px;
-   
+    background-color: white;
+   margin-top: 50px;
 }
 
 #canvas-draft{
@@ -21,17 +38,26 @@ body, html{
     height:480px;
     
 }  
-.canvas{
-    margin: 20px 150px 20px 150px ;
+/* .canvas{
+    /* margin: 20px 150px 20px 150px ; */
+/* } */ */
+.section-buttons{
+    background-color: #424242;
+    margin-top: 50px;
+    padding: 50px;
 }
 .buttons{ 
     margin: 50px 100px 0px 100px;
     width: auto;
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     
 }
 .btn{
+    display: flex;
     margin: 10px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    width: auto;
     
 }

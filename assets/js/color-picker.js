@@ -1,5 +1,5 @@
 
-$('#btns').append(`<button class="btn btn-primary fas fa-palette color-picker">Color</button>`);
+$('#btns').append(`<button class="btn btn-info fas fa-palette color-picker">Color</button>`);
 
 const pickr = Pickr.create({
     el: '.color-picker',
