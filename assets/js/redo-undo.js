@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const undoTagButton = document.getElementById('undoTagButton')
     undoTagButton.addEventListener('click', (e) => {
       e.preventDefault()
-      context.undo()
+      //context.undo()
       context.undoTag()
       
     })
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const redoTagButton = document.getElementById('redoTagButton')
     redoTagButton.addEventListener('click', (e) => {
       e.preventDefault()
-      context.redo()
+      //context.redo()
       context.redoTag()
       
     })

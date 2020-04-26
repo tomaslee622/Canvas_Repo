@@ -1,20 +1,3 @@
-function colorToRGBA(color) {
-  // Returns the color as an array of [r, g, b, a] -- all range from 0 - 255
-  // color must be a valid canvas fillStyle. This will cover most anything
-  // you'd want to use.
-  // Examples:
-  // colorToRGBA('red')  # [255, 0, 0, 255]
-  // colorToRGBA('#f00') # [255, 0, 0, 255]
-  var cvs, ctx;
-  cvs = document.createElement('canvas');
-  cvs.height = 1;
-  cvs.width = 1;
-  ctx = cvs.getContext('2d');
-  ctx.fillStyle = color;
-  ctx.fillRect(0, 0, 1, 1);
-  return ctx.getImageData(0, 0, 1, 1).data;
-}
-
 function getPixel(imageData, x, y) {
   if (x < 0 || y < 0 || x >= imageData.width || y >= imageData.height) {
     return [-1, -1, -1, -1];  // impossible color
@@ -45,10 +28,11 @@ function floodFill(ctx, x, y, fillColor, range = 1) {
   const imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
   
   // flags for if we visited a pixel already
-  const visited = new Uint32Array(imageData.width, imageData.height);
+  const visited = new Uint8Array(imageData.width, imageData.height);
   
   // get the color we're filling
   const targetColor = getPixel(imageData, x, y);
+  console.log(targetColor, fillColor);
   
   // check we are actually filling a different color
   if (!colorsMatch(targetColor, fillColor)) {
@@ -86,10 +70,11 @@ class CanvasFill extends PaintFunction{
     
     onMouseDown(coord,event){
         this.contextReal.fillStyle = this.fillColor;
-        let rgba = colorToRGBA(this.contextReal.fillStyle);
+        let rgba = pickr.getColor().toRGBA().toString(0);
+        //console.log(rgba);
         this.origX = coord[0];
         this.origY = coord[1];
-        floodFill(this.contextReal, this.origX, this.origY, rgba, 2);
+        floodFill(this.contextReal, this.origX, this.origY, rgba, 128);
         this.contextReal.putTag();
     }
     onDragging(){}
