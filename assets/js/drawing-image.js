@@ -1,23 +1,22 @@
 class DrawingImage extends PaintFunction{
-    constructor(contextReal,contextDraft){
+    constructor(contextReal, img){
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;
+        this.img = img;
     }
     
     onMouseDown(coord,event){
         this.origX = coord[0];
         this.origY = coord[1];
-        let img = new Image();
-        img.src = 'https://4.bp.blogspot.com/-fPqO1opiJ8U/VdL1WkuZXrI/AAAAAAAAw-Y/yVIcsikznD0/s100/shirokuma_sleep.png';
-        img.onload = function() {
-            contextReal.drawImage(img, coord[0]-(img.width / 2), coord[1]-(img.height / 2));
-        };
         this.contextReal.putTag();
+        contextReal.drawImage(this.img, coord[0]-(this.img.width / 2), coord[1]-(this.img.height / 2));
     }
     onDragging(){}
     onMouseMove(){}
-    onMouseUp(){}
+    onMouseUp(coord){
+        this.contextReal.putTag();
+    }
     onMouseLeave(){}
     onMouseEnter(){}
 }
