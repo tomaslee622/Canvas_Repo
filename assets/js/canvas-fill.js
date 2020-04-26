@@ -70,11 +70,12 @@ class CanvasFill extends PaintFunction{
     
     onMouseDown(coord,event){
         this.contextReal.fillStyle = this.fillColor;
-        let rgba = pickr.getColor().toRGBA().toString(0);
-        //console.log(rgba);
+        let rgba = pickr.getColor().toRGBA();
+        rgba[3] *= 255;
+        console.log(rgba);
         this.origX = coord[0];
         this.origY = coord[1];
-        floodFill(this.contextReal, this.origX, this.origY, rgba, 128);
+        floodFill(this.contextReal, this.origX, this.origY, rgba, 2);
         this.contextReal.putTag();
     }
     onDragging(){}
