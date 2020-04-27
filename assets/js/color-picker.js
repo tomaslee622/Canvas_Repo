@@ -1,4 +1,3 @@
-
 $('#btns').append(`<button class="btn btn-info fas fa-palette color-picker">Color</button>`);
 
 const pickr = Pickr.create({
@@ -6,6 +5,7 @@ const pickr = Pickr.create({
     theme: 'classic', // or 'monolith', or 'nano'
     useAsButton: true,
     sliders: 'v',
+    default: '#0000ff',
 
     swatches: [
         'rgba(244, 67, 54, 1)',
@@ -45,9 +45,12 @@ const pickr = Pickr.create({
     }
 });
 
+let contextFill = '';
+
 pickr.on('init', instance => {
-    console.log('init', instance)
-    ;
+    console.log('init', instance);
+    const hexColors = instance._color.toHEXA().toString();
+    contextFill= hexColors;
 }).on('hide', instance => {
     console.log('hide', instance);
 }).on('show', (color, instance) => {
@@ -74,7 +77,7 @@ pickr.on('init', instance => {
 pickr.on('change', (color, instance) =>{
     const hexColors = color.toHEXA().toString();
     contextFill= hexColors;
-    console.log(contextFill)
+    //console.log(contextFill)
     currentFunction.fillColor = hexColors;
     currentFunction.color = hexColors;
 })
