@@ -3,15 +3,13 @@ let contextReal = canvasReal.getContext('2d');
 let canvasDraft = document.getElementById('canvas-draft');
 let contextDraft = canvasDraft.getContext('2d');
 
+
+// the w , h for calculation of the canvas width and height
 let w = document.body.clientWidth;
 let h = window.innerHeight;
 let w2 = w*0.1;
 $('.canvas').css({left:`${w2}px`,w})
-console.log(w,h)
-
-
-
-
+// then assign the canvas position inside the window
 
 canvasReal.width  = w*0.8;
 canvasReal.height = 500;
@@ -22,7 +20,7 @@ canvasDraft.width  = w*0.8;
 canvasDraft.height = 500;
 canvasDraft.style.width  = `${w*0.8}px`;
 canvasDraft.style.height = '500px';
-
+/* --------------------------------------- */
 let currentFunction;
 let dragging = false;
 

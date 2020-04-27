@@ -1,11 +1,9 @@
-html{
+html,body{
      overflow:hidden;
     height: 100%;
+    width: 100%;
 }
-body{
-    overflow:scroll;
-   height: 100%;
-}
+
 .bubble {
     
     position: absolute;
@@ -42,27 +40,28 @@ body{
     height:480px;
     
 }  
-/* .canvas{
-    /* margin: 20px 150px 20px 150px ; */
-/* } */ */
+
 .section-buttons{
-    background-color: #424242;
+    
     margin-top: 50px;
     padding: 50px;
 }
 .buttons{ 
     margin: 50px 100px 0px 100px;
     width: auto;
-    display: inline-flex;
-    
+    display: flex;
+    text-align: center;
 }
 .btn{
-    display: flex;
+    display: inline-block;
     margin: 10px;
     text-align: center;
     align-items: center;
-    height: 40px;
-    width: auto;
+    align-self: center;
+    line-height: 50px;
+    height: 50px;
+    width: 250px;
+   
     
 }
 #msg, #icon {

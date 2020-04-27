@@ -1,34 +1,9 @@
+// to make the canvas drawing itself, we first get the class (.bubble) from html
 var canvas = document.querySelector(".bubble");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var ctx = canvas.getContext("2d");
-
-// ctx.fillRect(100, 100, 100, 100);
-// ctx.fillStyle = "rgba(255,0,0,0.5)";
-// //line
-// ctx.beginPath();
-// ctx.moveTo(50, 300);
-// ctx.lineTo(300, 100);
-// ctx.lineTo(400, 300);
-// ctx.strokeStyle = "#fa34a3";
-// ctx.stroke();
-
-// //Arc
-// // ctx.beginPath();
-// // ctx.arc(300,300,30,0, Math.PI *2, false);
-// // ctx.strokeStyle = "blue";
-// // ctx.stroke();
-
-// for (let i = 0; i < 10; i++) {
-//   let x = Math.random() * window.innerWidth;
-//   let y = Math.random() * window.innerHeight;
-
-//   ctx.beginPath();
-//   ctx.arc(x , y, 30, 0, Math.PI * 2, false);
-//   ctx.strokeStyle = "black";
-//   ctx.stroke();
-// }
 
 function Circle(x, y, dx, dy, radius) {
   this.x = x;
@@ -70,8 +45,6 @@ for (let i = 0; i < 400; i++) {
   circleArray.push(new Circle(x, y, dx, dy, radius));
   var circle = new Circle(200, 200, 3, 3, 30);
 }
-console.log(circleArray);
-// circle.draw();
 
 function animate() {
   requestAnimationFrame(animate);

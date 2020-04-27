@@ -14,7 +14,10 @@
 
 <body>
     <section>
+        <!-- class Bubble is the background  -->
         <canvas class="bubble" ></canvas>
+
+        <!-- here's the canvas is the main canvas -->
         <div id="canvas-container">
             
             <canvas id="canvas-real" class="canvas" ></canvas>
@@ -24,22 +27,23 @@
     </section>
     <section class="section-buttons">
         <div class="buttons" id="btns">
-            <span class="btn btn-info far fa-caret-square-up" id="drawing-triangle">Drawing Triangle</span>
-            <span class="btn btn-info fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-line">Drawing Line</span>
-            <span class="btn btn-info fa fa-circle" id="drawing-circle">Drawing Circle</span>
-            <span class="btn btn-info fas fa-circle-notch " id="drawing-oval">Drawing Oval</span>
-            <span class="btn btn-info fas fa-paint-roller" id="drawing-paint">Painting</span>
-            <span class="btn btn-info far fa-laugh-beam" id="drawing-image">Icons</span>
-            <span id="undoTagButton" class="btn btn-info fas fa-undo">Undo</span>
-            <span id="redoTagButton" class="btn btn-info fas fa-redo">Redo</span>
-            <span id="copyButton" class="btn btn-info fas fa-object-ungroup">Copy</span>
-            <span id="cutButton" class="btn btn-info fas fa-cut">Cut</span>
+            <button class="btn btn-info far fa-caret-square-up" id="drawing-triangle">Drawing Triangle</button>
+            <button class="btn btn-info fa fa-square" id="drawing-rectangle">Drawing Rectangle</button>
+            <button class="btn btn-info fa fa-paint-brush" id="drawing-line">Drawing Line</button>
+            <button class="btn btn-info fa fa-circle" id="drawing-circle">Drawing Circle</button>
+            <button class="btn btn-info fas fa-circle-notch " id="drawing-oval">Drawing Oval</button>
+            <button class="btn btn-info fas fa-paint-roller" id="drawing-paint">Painting</button>
+            <button class="btn btn-info far fa-laugh-beam" id="drawing-image">Icons</button>
+            <button id="undoTagButton" class="btn btn-info fas fa-undo">Undo</button>
+            <button id="redoTagButton" class="btn btn-info fas fa-redo">Redo</button>
+            <button id="copyButton" class="btn btn-info fas fa-object-ungroup">Copy</button>
+            <button id="cutButton" class="btn btn-info fas fa-cut">Cut</button>
         </div>
+
         <div id='msg'></div>
         <div id='icon'></div>
     </section>
-        <!-- <div class="color-picker"></div> -->
+        
     
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
