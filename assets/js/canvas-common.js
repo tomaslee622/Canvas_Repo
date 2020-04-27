@@ -25,7 +25,6 @@ canvasDraft.style.height = '500px';
 
 let currentFunction;
 let dragging = false;
-let contextFill = '';
 
 $('#canvas-draft').mousedown(function(e){
     let mouseX = e.offsetX;
