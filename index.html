@@ -36,6 +36,7 @@
             <button class="btn btn-info far fa-laugh-beam" id="drawing-image">Icons</button>
             <button id="undoTagButton" class="btn btn-info fas fa-undo">Undo</button>
             <button id="redoTagButton" class="btn btn-info fas fa-redo">Redo</button>
+            <button id="eraserButton" class="btn btn-info fas fa-eraser">Eraser</button>
             <button id="copyButton" class="btn btn-info fas fa-object-ungroup">Copy</button>
             <button id="cutButton" class="btn btn-info fas fa-cut">Cut</button>
         </div>
@@ -62,6 +63,7 @@
     <script src="./assets/js/redoUndo2.js"></script>
 
     <script src="./assets/js/canvas-common.js"></script>
+    <script src="./assets/js/drawing-eraser.js"></script>
     <script src="./assets/js/color-picker.js"></script>
     <script src="./assets/js/canvas-fill.js"></script>
     <script src="./assets/js/drawing-ellipse.js"></script>
@@ -73,6 +75,9 @@
     <script src="./assets/js/canvas-copy.js"></script>
     <script src="./assets/js/canvas-cut.js"></script>
     <script type='text/javascript'>
+        $('#eraserButton').click(() => {
+            currentFunction = new DrawingEraser(contextReal, contextDraft);
+        });
         $('#drawing-triangle').click(() => {
             currentFunction = new DrawingTriangle(contextReal, contextDraft, contextFill);
         });

@@ -28,7 +28,7 @@ html,body{
     bottom:0px;
     left:0px;
     background-color: white;
-   margin-top: 50px;
+   margin-top: 40px;
 }
 
 #canvas-draft{
@@ -37,17 +37,17 @@ html,body{
 #canvas-container{
     margin: 20px;
     padding: 10px;
-    height:480px;
+    height:450px;
     
 }  
 
 .section-buttons{
     
-    margin-top: 50px;
-    padding: 50px;
+    margin-top: 10px;
+    padding: 10px;
 }
 .buttons{ 
-    margin: 50px 100px 0px 100px;
+    
     width: auto;
     display: flex;
     text-align: center;

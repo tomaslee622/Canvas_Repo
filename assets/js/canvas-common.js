@@ -12,14 +12,14 @@ $('.canvas').css({left:`${w2}px`,w})
 // then assign the canvas position inside the window
 
 canvasReal.width  = w*0.8;
-canvasReal.height = 500;
+canvasReal.height = 400;
 canvasReal.style.width  = `${w*0.8}px`;
-canvasReal.style.height = '500px';
+canvasReal.style.height = '400px';
 
 canvasDraft.width  = w*0.8;
-canvasDraft.height = 500;
+canvasDraft.height = 400;
 canvasDraft.style.width  = `${w*0.8}px`;
-canvasDraft.style.height = '500px';
+canvasDraft.style.height = '400px';
 /* --------------------------------------- */
 let currentFunction;
 let dragging = false;
