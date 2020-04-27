@@ -108,27 +108,39 @@
                 $("#icon").empty();
             } else {
                 $('#msg').append(`<p><strong>Select any image and click the whiteboard above</strong></p>`);
-                let folder = "./assets/img/";
-                let index = 0;
-                $.ajax({
-                    url : folder,
-                    success: function (data) {
-                        $(data).find("a").attr("href", function (i, val) {
-                            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                                $("#icon").append( `<img id="theImg${index}" src='${val}'>` );
-                                index ++;
-                            }
+                // let folder = "./assets/img/";
+                // let index = 0;
+                // $.ajax({
+                //     url : folder,
+                //     success: function (data) {
+                //         $(data).find("a").attr("href", function (i, val) {
+                //             if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                //                 $("#icon").append( `<img id="theImg${index}" src='${val}'>` );
+                //                 index ++;
+                //             }
+                //         });
+                //     }
+                // }).done( () => {
+                //     $('#icon').imagesLoaded().done( () => {
+                //         for (let i = 0; i < index; i++) {
+                //             $(`#theImg${i}`).click(() => {
+                //                 let a = document.getElementById(`theImg${i}`);
+                //                 currentFunction = new DrawingImage(contextReal, a);
+                //             });
+                //         };
+                //     });
+                // });
+                $('#icon').append(`<img id="theImg0" src="/assets/img/champion_belt.png">`);
+                $('#icon').append(`<img id="theImg1" src="/assets/img/coin_kinka.png">`);
+                $('#icon').append(`<img id="theImg2" src="/assets/img/food_syouronpou.png">`);
+                $('#icon').append(`<img id="theImg3" src="/assets/img/shirokuma_sleep.png">`);
+                $('#icon').imagesLoaded().done( () => {
+                    for (let i = 0; i < 4; i++) {
+                        $(`#theImg${i}`).click(() => {
+                            let a = document.getElementById(`theImg${i}`);
+                            currentFunction = new DrawingImage(contextReal, a);
                         });
-                    }
-                }).done( () => {
-                    $('#icon').imagesLoaded().done( () => {
-                        for (let i = 0; i < index; i++) {
-                            $(`#theImg${i}`).click(() => {
-                                let a = document.getElementById(`theImg${i}`);
-                                currentFunction = new DrawingImage(contextReal, a);
-                            });
-                        };
-                    });
+                    };
                 });
             }
         });
